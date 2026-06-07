@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -13,7 +16,10 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Hanzla's Website",
+  title: {
+    default: "Muhammad Hanzla's Website",
+    template: "%s | Muhammad Hanzla's Website",
+  },
   description: "Personal website of Muhammad Hanzla running on Next.js.",
 };
 
@@ -27,7 +33,11 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${inter.variable} h-full antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        <Header />
+        <div>{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }
