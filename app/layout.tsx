@@ -4,6 +4,7 @@ import './globals.css';
 
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
+import { ThemeProvider } from '@/components/providers/theme-provider';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -29,13 +30,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${inter.variable} h-full antialiased`}>
-      <body>
-        <div className="lg:mx-w-5xl mx-auto min-h-screen px-4 md:max-w-4xl">
-          <Header />
-          <div>{children}</div>
-          <Footer />
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${outfit.variable} ${inter.variable} h-full antialiased`}>
+        <ThemeProvider>
+          <div className="lg:mx-w-5xl mx-auto min-h-screen px-4 md:max-w-4xl">
+            <Header />
+            <div>{children}</div>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
