@@ -1,47 +1,44 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import Logo from "@/public/logo.svg";
+import Logo from '@/public/logo.svg';
 
 export default function Navbar() {
   const links = [
     {
-      href: "/blog",
-      label: "Blog",
+      href: '/blog',
+      label: 'Blog',
     },
     {
-      href: "/about-me",
-      label: "About Me",
+      href: '/about-me',
+      label: 'About Me',
     },
     {
-      href: "/projects",
-      label: "Projects",
+      href: '/projects',
+      label: 'Projects',
     },
   ];
 
   return (
-    <nav className="w-full h-14 flex items-center justify-between border-b border-gray-600">
+    <nav className="flex h-14 w-full items-center justify-between border-b border-gray-600">
       <h1>
         <Link
           href="/"
-          className="text-xl font-semibold border-b border-transparent hover:border-white"
+          className="border-b border-transparent text-xl font-semibold hover:border-white"
         >
           Muhammad Hanzla
         </Link>
       </h1>
       <div className="flex items-center">
-        <ul className="hidden md:flex gap-4 mr-4">
+        <ul className="mr-4 hidden gap-4 md:flex">
           {links.map((link, idx) => (
             <li key={idx}>
-              <Link href={link.href} className="p-2 hover:bg-gray-900 rounded">
+              <Link href={link.href} className="rounded p-2 hover:bg-gray-900">
                 {link.label}
               </Link>
             </li>
           ))}
         </ul>
-        <button
-          title="Menu"
-          className="md:hidden p-2 hover:bg-gray-900 rounded"
-        >
+        <button title="Menu" className="rounded p-2 hover:bg-gray-900 md:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -57,7 +54,7 @@ export default function Navbar() {
             />
           </svg>
         </button>
-        <button title="Theme" className="p-2 hover:bg-gray-900 rounded">
+        <button title="Theme" className="rounded p-2 hover:bg-gray-900">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

@@ -1,11 +1,9 @@
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Resume",
-}
+  title: 'Resume',
+};
 
 export default function Resume() {
-    return (
-        <h1>Resume</h1>
-    );
+  return <h1>Resume</h1>;
 }
