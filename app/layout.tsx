@@ -34,9 +34,11 @@ export default function RootLayout({
       className={`${outfit.variable} ${inter.variable} h-full antialiased`}
     >
       <body>
-        <Header />
-        <div>{children}</div>
-        <Footer />
+        <div className="px-4 mx-auto md:max-w-4xl lg:mx-w-5xl min-h-screen">
+          <Header />
+          <div>{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );
