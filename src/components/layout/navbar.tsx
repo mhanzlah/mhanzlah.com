@@ -49,8 +49,8 @@ export default function Navbar() {
 
   const links = [
     {
-      href: '/blog',
-      label: 'Blog',
+      href: '/posts',
+      label: 'Posts',
     },
     {
       href: '/about-me',
