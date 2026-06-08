@@ -4,13 +4,37 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
+
+import SearchModal from '@/components/search/search-modal';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen((prev) => !prev);
+    setIsMenuOpen((prev) => !prev);
   };
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [pathname]);
+
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -65,12 +89,12 @@ export default function Navbar() {
           <button
             className={clsx(
               'mr-1 rounded p-2 hover:bg-gray-200 md:hidden dark:hover:bg-gray-900',
-              isOpen ? 'bg-gray-200 dark:bg-gray-900' : ''
+              isMenuOpen ? 'bg-gray-200 dark:bg-gray-900' : ''
             )}
             onClick={toggleMenu}
             title="Menu"
           >
-            {isOpen ? (
+            {isMenuOpen ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -98,7 +122,11 @@ export default function Navbar() {
               </svg>
             )}
           </button>
-          <button title="Search" className="rounded p-2 hover:bg-gray-200 dark:hover:bg-gray-900">
+          <button
+            className="rounded p-2 hover:bg-gray-200 dark:hover:bg-gray-900"
+            onClick={() => setIsSearchOpen(true)}
+            title="Search"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -153,9 +181,9 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-      {isOpen && (
+      {isMenuOpen && (
         <div className="md:hidden">
-          <div className="bg-background top-14 left-0 z-100 absolute h-[calc(100vh-56px)] w-full">
+          <div className="bg-background fixed top-14 left-0 z-100 h-[calc(100vh-56px)] w-full">
             <ul className="mt-24 flex flex-col items-center gap-1 space-y-8">
               {links.map((link, idx) => (
                 <li key={idx}>
@@ -171,6 +199,7 @@ export default function Navbar() {
           </div>
         </div>
       )}
+      {isSearchOpen && <SearchModal open={isSearchOpen} onClose={() => setIsSearchOpen(false)} />}
     </nav>
   );
 }
