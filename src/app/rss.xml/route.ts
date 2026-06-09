@@ -1,8 +1,4 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import path from 'path';
-
-const POSTS_DIR = path.join(process.cwd(), 'src/data/posts');
+import { getPosts } from '@/lib/posts';
 
 const SITE_URL = 'https://mhanzlah.vercel.app';
 
@@ -16,30 +12,16 @@ function escapeXml(str: string) {
 }
 
 export async function GET() {
-  const files = fs.readdirSync(POSTS_DIR);
-
-  const posts = files.map((file) => {
-    const filePath = path.join(POSTS_DIR, file);
-    const raw = fs.readFileSync(filePath, 'utf-8');
-
-    const { data } = matter(raw);
-
-    return {
-      title: data.title,
-      date: data.date,
-      excerpt: data.excerpt,
-      slug: file.replace('.md', ''),
-    };
-  });
+  const posts = getPosts();
 
   const rssItems = posts
     .map(
-      (post) => `
+      (p) => `
         <item>
-            <title>${escapeXml(post.title)}</title>
-            <link>${SITE_URL}/posts/${post.slug}</link>
-            <description>${escapeXml(post.excerpt)}</description>
-            <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+            <title>${escapeXml(p.frontmatter.title)}</title>
+            <link>${SITE_URL}/posts/${p.frontmatter.slug}</link>
+            <description>${escapeXml(p.frontmatter.excerpt)}</description>
+            <pubDate>${new Date(p.frontmatter.date).toUTCString()}</pubDate>
         </item>`
     )
     .join('');

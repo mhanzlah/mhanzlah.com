@@ -1,6 +1,6 @@
 ---
 title: First Post
-date: 2026-06-09
+date: 2026-06-09:20:21
 excerpt: My first real post
 ---
 
