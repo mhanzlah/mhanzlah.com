@@ -14,7 +14,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Blogspot',
-    subtitle: 'A minimal blogs sharing site',
+    subtitle: 'A blogs sharing website',
     year: 2026,
     links: [
       {
@@ -30,7 +30,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Yecommerce',
-    subtitle: 'A simple e-commerce shop',
+    subtitle: 'An e-commerce shop',
     year: 2026,
     links: [
       {
@@ -46,7 +46,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Anonymous Chess',
-    subtitle: 'Play chess with strangers',
+    subtitle: 'Web-based chess',
     year: 2026,
     links: [
       {
@@ -62,19 +62,19 @@ export const projects: Project[] = [
   },
   {
     title: 'Code Crafter',
-    subtitle: '',
+    subtitle: 'An extension for React & Vite',
     year: 2024,
     links: [{ title: 'Source', href: 'https://github.com/mhanzlah/code-crafter' }],
   },
   {
     title: 'Express Builder',
-    subtitle: '',
+    subtitle: 'An extension for express.js',
     year: 2024,
     links: [{ title: 'Source', href: 'https://github.com/mhanzlah/express-builder' }],
   },
   {
     title: 'Sidcup',
-    subtitle: '',
+    subtitle: 'A simple website',
     year: 2024,
     links: [
       { title: 'Demo', href: 'https://mhanzlah.github.io/sidcup' },
