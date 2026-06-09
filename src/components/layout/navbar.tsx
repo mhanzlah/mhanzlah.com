@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 import SearchModal from '@/components/search/search-modal';
+import { navLinks } from '@/data/nav-links';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -47,21 +48,6 @@ export default function Navbar() {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
   };
 
-  const links = [
-    {
-      href: '/posts',
-      label: 'Posts',
-    },
-    {
-      href: '/about-me',
-      label: 'About Me',
-    },
-    {
-      href: '/projects',
-      label: 'Projects',
-    },
-  ];
-
   return (
     <nav className="relative">
       <div className="flex h-14 w-full items-center justify-between border-b border-gray-300 dark:border-gray-600">
@@ -75,13 +61,13 @@ export default function Navbar() {
         </h1>
         <div className="flex items-center">
           <ul className="mr-4 hidden gap-4 md:flex">
-            {links.map((link, idx) => (
-              <li key={idx}>
+            {navLinks.map((link) => (
+              <li key={link.title}>
                 <Link
                   href={link.href}
                   className="rounded p-2 hover:bg-gray-200 dark:hover:bg-gray-900"
                 >
-                  {link.label}
+                  {link.title}
                 </Link>
               </li>
             ))}
@@ -185,13 +171,13 @@ export default function Navbar() {
         <div className="md:hidden">
           <div className="bg-background fixed top-14 left-0 z-100 h-[calc(100vh-56px)] w-full">
             <ul className="mt-24 flex flex-col items-center gap-1 space-y-8">
-              {links.map((link, idx) => (
-                <li key={idx}>
+              {navLinks.map((link) => (
+                <li key={link.title}>
                   <Link
                     href={link.href}
                     className="m-2 rounded p-4 text-lg hover:bg-gray-200 dark:hover:bg-gray-900"
                   >
-                    {link.label}
+                    {link.title}
                   </Link>
                 </li>
               ))}
