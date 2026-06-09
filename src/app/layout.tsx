@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     template: "%s | Muhammad Hanzla's Website",
   },
   description: 'Personal website of Muhammad Hanzla running on Next.js.',
+  alternates: {
+    types: {
+      'application/rss+xml': '/rss.xml',
+    },
+  },
 };
 
 export default function RootLayout({
