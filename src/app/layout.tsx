@@ -35,7 +35,7 @@ export default function RootLayout({
         <ThemeProvider>
           <div className="lg:mx-w-5xl mx-auto min-h-screen px-4 md:max-w-4xl">
             <Header />
-            <div>{children}</div>
+            <main className="my-10">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>

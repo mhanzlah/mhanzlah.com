@@ -3,7 +3,7 @@ import { type Project } from '@/types/project';
 export const projects: Project[] = [
   {
     title: 'mhanzlah.com',
-    subtitle: 'Source of this site',
+    subtitle: 'The source of this website',
     year: 2026,
     links: [
       {
@@ -59,5 +59,26 @@ export const projects: Project[] = [
       },
     ],
     featured: true,
+  },
+  {
+    title: 'Code Crafter',
+    subtitle: '',
+    year: 2024,
+    links: [{ title: 'Source', href: 'https://github.com/mhanzlah/code-crafter' }],
+  },
+  {
+    title: 'Express Builder',
+    subtitle: '',
+    year: 2024,
+    links: [{ title: 'Source', href: 'https://github.com/mhanzlah/express-builder' }],
+  },
+  {
+    title: 'Sidcup',
+    subtitle: '',
+    year: 2024,
+    links: [
+      { title: 'Demo', href: 'https://mhanzlah.github.io/sidcup' },
+      { title: 'Source', href: 'https://github.com/mhanzlah/sidcup' },
+    ],
   },
 ];

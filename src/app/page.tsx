@@ -7,7 +7,7 @@ import ProjectCard from '@/components/ui/project-card';
 
 export default function Home() {
   return (
-    <div className="my-10">
+    <div>
       <Section heading="h1" title="Hey, I'm Hanzla!" className="mb-8">
         <div className="mb-2">
           <p>I'm a software engineer to be.</p>
