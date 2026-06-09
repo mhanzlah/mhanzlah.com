@@ -4,6 +4,7 @@ type Heading = 'h1' | 'h2';
 
 type SectionProps = {
   heading?: Heading;
+  headingClassName?: string;
   title: React.ReactNode;
   children: React.ReactNode;
   className?: string;
@@ -11,6 +12,7 @@ type SectionProps = {
 
 export default function Section({
   heading: HeadingTag = 'h2',
+  headingClassName = '',
   title,
   children,
   className = '',
@@ -20,12 +22,13 @@ export default function Section({
       <HeadingTag
         className={clsx(
           'mb-6 font-bold',
-          HeadingTag === 'h2' ? 'text-2xl md:text-3xl' : 'text-4xl md:text-5xl'
+          HeadingTag === 'h2' ? 'text-2xl md:text-3xl' : 'text-4xl md:text-5xl',
+          headingClassName
         )}
       >
         {title}
       </HeadingTag>
-      <div className="md:text-lg">{children}</div>
+      <div>{children}</div>
     </section>
   );
 }

@@ -4,13 +4,15 @@ import Link from 'next/link';
 import { projects } from '@/data/projects';
 
 import ProjectCard from '@/components/ui/project-card';
+import Markdown from '@/components/ui/markdown';
+import { aboutMe } from '@/data/about-me';
 
 export default function Home() {
   return (
-    <div>
+    <div className="md:text-lg">
       <Section heading="h1" title="Hey, I'm Hanzla!" className="mb-8">
         <div className="mb-2">
-          <p>I'm a software engineer to be.</p>
+          <Markdown>{aboutMe.content.intro}</Markdown>
           <div className="mt-4">
             <Link href="/about-me" className="border-foreground border-b">
               About Me
