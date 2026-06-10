@@ -17,7 +17,7 @@ export default function Markdown({
             <h2
               className={clsx(
                 'mt-10 mb-4 pb-2 text-2xl font-semibold',
-                h2Border ? 'border-b border-gray-200 dark:border-gray-800' : ''
+                h2Border && 'border-b border-gray-200 dark:border-gray-800'
               )}
             >
               {children}
