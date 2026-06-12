@@ -1,9 +1,7 @@
 import clsx from 'clsx';
 
-type Heading = 'h1' | 'h2';
-
-type SectionProps = {
-  heading?: Heading;
+type Props = {
+  parent?: boolean;
   headingClassName?: string;
   title: React.ReactNode;
   children: React.ReactNode;
@@ -11,18 +9,20 @@ type SectionProps = {
 };
 
 export default function Section({
-  heading: HeadingTag = 'h2',
+  parent = false,
   headingClassName = '',
   title,
   children,
   className = '',
-}: SectionProps) {
+}: Props) {
+  const HeadingTag = parent ? 'h1' : 'h2';
+
   return (
     <section className={className}>
       <HeadingTag
         className={clsx(
           'mb-6 font-bold',
-          HeadingTag === 'h2' ? 'text-2xl md:text-3xl' : 'text-4xl md:text-5xl',
+          parent ? 'text-4xl md:text-5xl' : 'text-2xl md:text-3xl',
           headingClassName
         )}
       >

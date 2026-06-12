@@ -18,7 +18,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           year: 'numeric',
         })}
       </p>
-      <Section heading="h1" title={post.frontmatter.title}>
+      <Section parent={true} title={post.frontmatter.title}>
         <Markdown h2Border={true}>{post.content}</Markdown>
       </Section>
     </>

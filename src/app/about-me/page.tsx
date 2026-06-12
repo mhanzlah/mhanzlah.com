@@ -17,10 +17,11 @@ export default function AboutMe() {
   });
 
   return (
-    <>
-      <Section heading="h1" title="About Me" className="mb-8">
+    <Section parent={true} title="About Me" className="mb-8">
+      <div>
         <Markdown>{aboutMe.content.bio}</Markdown>
-      </Section>
+      </div>
+
       <Section
         title="Contact"
         headingClassName="border-b border-gray-200 dark:border-gray-700 pb-3"
@@ -71,6 +72,6 @@ export default function AboutMe() {
           </li>
         </ul>
       </Section>
-    </>
+    </Section>
   );
 }

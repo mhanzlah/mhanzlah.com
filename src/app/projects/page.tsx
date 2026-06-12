@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <div>
-      <Section heading="h1" title="Projects">
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+      <Section parent={true} title="Projects">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}

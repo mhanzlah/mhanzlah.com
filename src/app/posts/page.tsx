@@ -29,7 +29,7 @@ export default function Posts() {
     .sort((a, b) => b - a);
 
   return (
-    <Section heading="h1" title="Posts">
+    <Section parent={true} title="Posts">
       {posts.length === 0 ? (
         <p>No posts yet.</p>
       ) : (
