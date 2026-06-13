@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div className="md:text-lg">
-      <Section heading="h1" title="Hey, I'm Hanzla!" className="mb-8">
+      <Section parent={true} title="Hey, I'm Hanzla!" className="mb-8">
         <div className="mb-2">
           <Markdown>{aboutMe.content.intro}</Markdown>
           <div className="mt-4">
