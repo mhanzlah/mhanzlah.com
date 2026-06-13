@@ -1,0 +1,14 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Release Deploy
+        run: curl -X POST ${{ secrets.VERCEL_RELEASE_DEPLOY_HOOK }}

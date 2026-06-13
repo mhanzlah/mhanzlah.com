@@ -1,0 +1,16 @@
+name: Publish Content
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/data/posts/**"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Content Deploy
+        run: curl -X POST ${{ secrets.VERCEL_CONTENT_DEPLOY_HOOK }}
