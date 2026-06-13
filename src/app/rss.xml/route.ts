@@ -16,7 +16,9 @@ export async function GET() {
 
   const rssItems = posts
     .map(
-      (p) => `
+      (p) =>
+        p &&
+        `
         <item>
             <title>${escapeXml(p.frontmatter.title)}</title>
             <link>${SITE_URL}/posts/${p.frontmatter.slug}</link>
