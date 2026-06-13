@@ -6,7 +6,9 @@ export type ProjectLink = {
 export type Project = {
   title: string;
   subtitle: string;
+  description?: string[];
   year: number;
   links: ProjectLink[];
   featured?: boolean;
+  onCV?: boolean;
 };
