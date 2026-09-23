@@ -1,0 +1,32 @@
+@import "./reset.css";
+
+:root {
+  --color-background: #fff;
+  --color-foreground: #444;
+
+  --font-body: "Figtree", system-ui, sans-serif;
+  --font-display: "Host Grotesk", system-ui, sans-serif;
+
+  --container-width: 1200px;
+  --container-padding: 1.5rem;
+}
+
+body {
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+
+.container {
+  width: min(100% - 2 * var(--container-padding), var(--container-width));
+  margin-inline: auto;
+}
