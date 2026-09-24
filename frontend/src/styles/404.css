@@ -1,0 +1,30 @@
+.error {
+  padding-block: 6rem;
+}
+
+.error h1 {
+  margin-bottom: 2rem;
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: var(--color-foreground-strong);
+}
+
+.error p {
+  margin-bottom: 1.25rem;
+}
+
+.error ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.25rem;
+}
+
+.error li + li {
+  margin-top: 0.5rem;
+}
+
+.error a {
+  color: var(--color-accent);
+}
+
+.error a:hover {
+  opacity: 0.7;
+}
