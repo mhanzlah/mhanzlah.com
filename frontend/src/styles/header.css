@@ -8,10 +8,21 @@
   justify-content: space-between;
 }
 
+.header__brand {
+  display: flex;
+  flex-direction: column;
+}
+
 .header__name {
+  font-family: var(--font-display);
   font-weight: 200;
   font-size: clamp(1.5rem, 4vw, 2rem);
   color: var(--color-foreground-strong);
+}
+
+.header__role {
+  font-size: clamp(0.7rem, 4vw, 0.8rem);
+  color: var(--color-foreground-subtle);
 }
 
 .header__links {
@@ -44,5 +55,9 @@
     align-items: center;
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .header__brand {
+    align-items: center;
   }
 }
