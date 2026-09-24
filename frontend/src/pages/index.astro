@@ -1,12 +1,73 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/index.css";
 ---
 
-<BaseLayout pageTitle="Home">
-  <main>
-    <div class="container">
-      <h1>Hi, I'm Hanzla.</h1>
-      <p>AI student and developer.</p>
-    </div>
-  </main>
+<BaseLayout>
+  <div class="container">
+    <section class="hero">
+      <div class="me">
+        <img src="https://placehold.co/400" alt="Portrait of Hanzla" />
+      </div>
+
+      <div class="about">
+        <p>Hi, I'm a developer and AI student based in Pakistan.</p>
+
+        <p>
+          I've spent the last couple of years building things for the web, from
+          full-stack applications and APIs to smaller tools and experiments. I
+          enjoy working across the stack, with a particular interest in backend
+          development and the systems that make products work behind the scenes.
+        </p>
+
+        <p>
+          I've worked as a MERN Developer Intern at&nbsp;
+          <a
+            href="https://10pearls.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            10Pearls
+          </a>
+          , and an AI/ML Intern at&nbsp;
+          <a
+            href="https://caipsd.iub.edu.pk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CAIPSD, IUB
+          </a>
+          , where I got to work on real projects and learn alongside other developers.
+          I'm currently pursuing a Backend AI Engineering internship at&nbsp;
+          <a
+            href="https://flyrank.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            FlyRank
+          </a>
+          , exploring the intersection of backend systems and AI.
+        </p>
+
+        <p>
+          I'm currently studying Artificial Intelligence at&nbsp;
+          <a
+            href="https://iub.edu.pk/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            The Islamia University of Bahawalpur
+          </a>. I'm interested in learning through practical work, building
+          projects, and exploring new areas of software development alongside my
+          studies.
+        </p>
+
+        <p>
+          When I'm not coding, you can usually find me playing games, exploring
+          new technology, working on a side project, or going down a rabbit hole
+          about something I've just discovered.
+        </p>
+      </div>
+    </section>
+  </div>
 </BaseLayout>

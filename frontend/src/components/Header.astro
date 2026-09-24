@@ -11,7 +11,7 @@ const currentPath = Astro.url.pathname;
         <a href="/">
           <span class="header__name">Muhammad Hanzla</span>
         </a>
-        <span class="header__role">Full-Stack Developer</span>
+        <span class="header__role">full-stack developer</span>
       </div>
 
       <ul class="header__links">
@@ -25,14 +25,6 @@ const currentPath = Astro.url.pathname;
             href="/work"
             aria-current={currentPath.startsWith("/work") ? "page" : undefined}
             >work</a
-          >
-        </li>
-        <li>
-          <a
-            href="/contact"
-            aria-current={currentPath.startsWith("/contact")
-              ? "page"
-              : undefined}>contact</a
           >
         </li>
       </ul>

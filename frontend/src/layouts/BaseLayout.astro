@@ -4,6 +4,9 @@ import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 
 const { pageTitle } = Astro.props;
+
+const name = "muhammad hanzla";
+const title = pageTitle ? pageTitle + " — " + name : name;
 ---
 
 <html lang="en">
@@ -18,7 +21,9 @@ const { pageTitle } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Host+Grotesk:ital,wght@0,100..800;1,100..800&display=swap"
       rel="stylesheet"
     />
-    <title>{pageTitle}</title>
+    <title>
+      {title}
+    </title>
   </head>
   <body>
     <Header />
