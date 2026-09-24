@@ -1,16 +1,52 @@
 ---
-
+import Envelope from "./icons/Envelope.astro";
+import Github from "./icons/Github.astro";
+import Instagram from "./icons/Instagram.astro";
+import LinkedIn from "./icons/LinkedIn.astro";
+import "../styles/footer.css";
 ---
 
-<footer>
-  <p>
-    &copy; {new Date().getFullYear()} Muhammad Hanzla
-  </p>
-</footer>
+<footer class="footer">
+  <div class="container">
+    <ul class="footer__socials">
+      <li>
+        <a
+          href="https://github.com/mhanzlah"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <Github />
+        </a>
+      </li>
 
-<style>
-  p {
-    text-align: center;
-    font-size: 14px;
-  }
-</style>
+      <li>
+        <a
+          href="https://linkedin.com/in/mhanzlah"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <LinkedIn />
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://instagram.com/amhanzlah"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <Instagram />
+        </a>
+      </li>
+
+      <li>
+        <a href="mailto:sayhi.hanzla@gmail.com" aria-label="Email">
+          <Envelope />
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>

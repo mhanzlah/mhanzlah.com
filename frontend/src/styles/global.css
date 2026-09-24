@@ -1,8 +1,12 @@
 @import "./reset.css";
 
 :root {
-  --color-background: #fff;
-  --color-foreground: #444;
+  --color-background: white;
+  --color-foreground: #444444;
+  --color-foreground-muted: #9c9c9c;
+  --color-foreground-subtle: #a8a8a8;
+  --color-foreground-strong: #0b080c;
+  --color-accent: #6598b8;
 
   --font-body: "Figtree", system-ui, sans-serif;
   --font-display: "Host Grotesk", system-ui, sans-serif;
@@ -26,7 +30,15 @@ h6 {
   font-family: var(--font-display);
 }
 
+svg {
+  fill: currentColor;
+}
+
 .container {
   width: min(100% - 2 * var(--container-padding), var(--container-width));
   margin-inline: auto;
+}
+
+.highlight {
+  color: var(--color-accent);
 }

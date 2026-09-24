@@ -1,0 +1,19 @@
+.footer {
+  padding-block: 2rem;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer__socials a {
+  display: flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: color 300ms ease;
+}
+
+.footer__socials a:hover {
+  color: black;
+}

@@ -1,13 +1,36 @@
 ---
+import "../styles/header.css";
 
+const currentPath = Astro.url.pathname;
 ---
 
-<header>
+<header class="header">
   <div class="container">
-    <nav>
-      <ul class="">
+    <nav class="header__nav" aria-label="Navigation">
+      <a href="/" class="header__brand">
+        <span class="header__name">Muhammad Hanzla</span>
+      </a>
+
+      <ul class="header__links">
         <li>
-          <a href="/">Home</a>
+          <a href="/" aria-current={currentPath === "/" ? "page" : undefined}
+            >home</a
+          >
+        </li>
+        <li>
+          <a
+            href="/work"
+            aria-current={currentPath.startsWith("/work") ? "page" : undefined}
+            >work</a
+          >
+        </li>
+        <li>
+          <a
+            href="/contact"
+            aria-current={currentPath.startsWith("/contact")
+              ? "page"
+              : undefined}>contact</a
+          >
         </li>
       </ul>
     </nav>
